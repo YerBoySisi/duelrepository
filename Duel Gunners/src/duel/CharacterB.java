@@ -22,6 +22,8 @@ public class CharacterB implements Dueler {
 			"Pathetic!"
 	};
 	
+	private int action;
+	
 	public void taunt() {
 		
 		int x = (int)(Math.random() * TAUNTS.length);
@@ -63,13 +65,17 @@ public class CharacterB implements Dueler {
 	
 	public void setAction() {
 		
-		
+		action = (int)(Math.random() * 3);
 		
 	}
 	
 	public int getAction(Object caller) {
 		
-		return 0;
+		if(caller instanceof Duel) {
+			return action;
+		} else {
+			return 3;
+		}
 		
 	}
 

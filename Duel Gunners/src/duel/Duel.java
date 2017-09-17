@@ -93,6 +93,8 @@ public class Duel {
 		int startingRounds = 60;
 		int rounds = startingRounds;
 		while (rounds > 0 && dueler1HP == d1.getHP() && dueler2HP == d2.getHP() && dueler1HP > 0 && dueler2HP > 0){
+			d1.setAction();
+			d2.setAction();
 			System.out.println("ROUND "+(startingRounds-rounds));
 			rounds --;
 			int d1Action = d1.getAction(this);

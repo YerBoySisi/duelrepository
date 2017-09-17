@@ -6,6 +6,7 @@ public class CharacterA implements Dueler {
 	
 	private String name;
 	private int hp;
+	private int action;
 	
 	private String[] TAUNTS = {
 			"You can't beat me.",
@@ -69,13 +70,19 @@ public class CharacterA implements Dueler {
 	
 	public int getAction(Object caller) {
 		
-		return 0;
+		if(caller instanceof Duel) {
+			return action;
+		} else {
+			return 3;
+		}
 		
 	}
 
 	public void hit(Object caller) {
 		
-		
+		if(caller instanceof Duel) {
+			hp -= 10;
+		}
 		
 	}
 	

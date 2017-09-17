@@ -25,6 +25,9 @@ public interface Dueler {
 	//return true if d has hp of given level
 	boolean determineIfOpponentIsFair(Dueler d, int hp);
 	
+	
+	void setAction();
+	
 	//return the action chosen for this round
 	//Object is the object calling this method. Use it to verify your opponent is not trying to gain the upperhand by figuring out what you are doing.
 	int getAction(Object caller);
