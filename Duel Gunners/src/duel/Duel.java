@@ -9,7 +9,7 @@ public class Duel {
 	public static final int YEAH_RIGHT = 3; //may return to anyone who calls who is not the Duel master. If you return to the duel master, you will die
 	public static final int LOADING = 0; //must load before shooting
 	public static final int SHOOTING = 1; //takes 10 away from opponent
-	public static final int GUARDING = 2; //cannot be shot
+	public static final int GUARDING = 2;//cannot be shot
 
 	public static final String[] outcomes = {"loads","shoots","guards","stands there looking confused"};
 
@@ -34,6 +34,8 @@ public class Duel {
 	public Duel() {
 		d1 = new CharacterA();
 		d2 = new CharacterB();
+		d1.setName();
+		d2.setName();
 	}
 
 	public void dukeItOut(){

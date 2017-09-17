@@ -8,6 +8,9 @@ public interface Dueler {
 	//later: the taunt must be different each time the method is called
 	void taunt();
 	
+	//sets name of the Dueler
+	void setName();
+	
 	//returns the name of the Dueler
 	String getName();
 	

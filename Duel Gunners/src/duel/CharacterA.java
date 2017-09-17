@@ -10,18 +10,28 @@ public class CharacterA implements Dueler {
 	private String[] TAUNTS = {
 			"You can't beat me.",
 			"Just give up already, will ya?",
-			"Is that all you got?",
+			"Is that all you've got?",
 			"You're a joke buddy.",
 			"Ha, yeah right pal!",
 			"Stop trying, you won't win.",
 			"I'm too strong for you, just quit!",
-			"You serious?"
+			"You serious?",
+			"Give me a real challenge.",
+			"Show me what you've got! If you even have anything...",
+			"C'mon, you can do better than that! I hope.",
+			"Pathetic!"
 	};
 	
 	public void taunt() {
 		
 		int x = (int)(Math.random() * TAUNTS.length);
 		System.out.println(TAUNTS[x]);
+		
+	}
+	
+	public void setName() {
+		
+		name = "Ace";
 		
 	}
 	
@@ -33,7 +43,9 @@ public class CharacterA implements Dueler {
 
 	public void setStartingHP(int hp) {
 		
-		this.hp = hp;
+		if(this.hp != hp) {
+			this.hp = hp;
+		}
 		
 	}
 
@@ -45,10 +57,16 @@ public class CharacterA implements Dueler {
 
 	public boolean determineIfOpponentIsFair(Dueler d, int hp) {
 		
-		return false;
+		return (d.getHP() == hp);
 		
 	}
-
+	
+	public void setAction() {
+		
+		
+		
+	}
+	
 	public int getAction(Object caller) {
 		
 		return 0;
