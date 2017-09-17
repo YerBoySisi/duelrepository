@@ -25,7 +25,7 @@ public interface Dueler {
 	//return true if d has hp of given level
 	boolean determineIfOpponentIsFair(Dueler d, int hp);
 	
-	
+	//sets the action of the character for this round
 	void setAction();
 	
 	//return the action chosen for this round
