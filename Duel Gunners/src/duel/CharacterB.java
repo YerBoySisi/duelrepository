@@ -27,7 +27,7 @@ public class CharacterB implements Dueler {
 			"You seriously want to face me? HA!",
 			"Give me a real challenge.",
 			"Show me what you've got! If you even have anything...",
-			"Let's see if you can even hold a gun!.",
+			"Let's see if you can even hold a gun.",
 			"Bring it on then!"
 	};
 	
