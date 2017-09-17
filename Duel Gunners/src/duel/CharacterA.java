@@ -5,6 +5,8 @@ package duel;
 public class CharacterA implements Dueler {
 	
 	private String name;
+	private int hp;
+	
 	private String[] TAUNTS = {
 			"You can't beat me.",
 			"Just give up already, will ya?",
@@ -31,13 +33,13 @@ public class CharacterA implements Dueler {
 
 	public void setStartingHP(int hp) {
 		
-		
+		this.hp = hp;
 		
 	}
 
 	public int getHP() {
 		
-		return 0;
+		return hp;
 		
 	}
 
