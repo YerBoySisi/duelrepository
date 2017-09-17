@@ -26,6 +26,7 @@ public interface Dueler {
 	boolean determineIfOpponentIsFair(Dueler d, int hp);
 	
 	//sets the action of the character for this round
+	//make your own AI for this part
 	void setAction();
 	
 	//return the action chosen for this round
