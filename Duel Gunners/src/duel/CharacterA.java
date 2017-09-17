@@ -4,23 +4,31 @@ package duel;
 
 public class CharacterA implements Dueler {
 	
+	public static final int NOTHING = -1;
+	public static final int LOADING = 0;
+	public static final int SHOOTING = 1;
+	public static final int GUARDING = 2;
+	public static final int YEAH_RIGHT = 3;
+	
 	private String name;
 	private int hp;
 	private int action;
+	private boolean loaded;
+	
+	private int lastAction = NOTHING;
 	
 	private String[] TAUNTS = {
 			"You can't beat me.",
-			"Just give up already, will ya?",
-			"Is that all you've got?",
+			"You oughtta just give up now.",
 			"You're a joke buddy.",
-			"Ha, yeah right pal!",
-			"Stop trying, you won't win.",
-			"I'm too strong for you, just quit!",
-			"You serious?",
+			"Think you can beat me? Ha, yeah right pal!",
+			"Don't even try, you won't win.",
+			"I'm too strong for you, just quit while you can!",
+			"You seriously want to face me? HA!",
 			"Give me a real challenge.",
 			"Show me what you've got! If you even have anything...",
-			"C'mon, you can do better than that! I hope.",
-			"Pathetic!"
+			"Let's see if you can even hold a gun!.",
+			"Bring it on then!"
 	};
 	
 	public void taunt() {
@@ -64,7 +72,36 @@ public class CharacterA implements Dueler {
 	
 	public void setAction() {
 		
+		if(lastAction == NOTHING) {
+			action = LOADING;
+			loaded = true;
+		} else {
+			
+			int x = (int)(Math.random() * 10);
+			
+			if(loaded) {
+				
+				if(x < 3) {
+					action = GUARDING;
+				} else {
+					action = SHOOTING;
+					loaded = false;
+				}
+				
+			} else {
+				
+				if(x < 8) {
+					action = GUARDING;
+				} else {
+					action = LOADING;
+					loaded = true;
+				}
+				
+			}
+			
+		}
 		
+		lastAction = action;
 		
 	}
 	
@@ -73,7 +110,7 @@ public class CharacterA implements Dueler {
 		if(caller instanceof Duel) {
 			return action;
 		} else {
-			return 3;
+			return YEAH_RIGHT;
 		}
 		
 	}
