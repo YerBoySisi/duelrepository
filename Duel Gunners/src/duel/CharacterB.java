@@ -1,126 +1,69 @@
 package duel;
 
-
-
 public class CharacterB implements Dueler {
 	
-	public static final int NOTHING = -1;
-	public static final int LOADING = 0;
-	public static final int SHOOTING = 1;
-	public static final int GUARDING = 2;
-	public static final int YEAH_RIGHT = 3;
-	
-	private String name;
-	private int hp;
-	private int action;
-	private boolean loaded;
-	
-	private int lastAction = NOTHING;
-	
-	private String[] TAUNTS = {
-			"You can't beat me.",
-			"Just give up already, will ya?",
-			"You're a joke buddy.",
-			"Think you can beat me? Ha, yeah right pal!",
-			"Don't even try, you won't win.",
-			"I'm too strong for you, just quit while you can!",
-			"You seriously want to face me? HA!",
-			"Give me a real challenge.",
-			"Show me what you've got! If you even have anything...",
-			"Let's see if you can even hold a gun.",
-			"Bring it on then!"
-	};
-	
+	void String[] listOfTaunts= {"You Suck",
+			"Try harder",
+			"Is that the best you can do?",
+			"Just give up",
+			"Stop wasting my time"
+	}
 	public void taunt() {
-		
-		int x = (int)(Math.random() * TAUNTS.length);
-		System.out.println(TAUNTS[x]);
-		
+		System.out.println(listOfTaunt[Math.random()*listOfTaunts.length]);
 	}
-	
-	public void setName() {
-		
-		name = "Deadeye";
-		
-	}
-	
-	public String getName() {
-		
+	private string name;
+	public string getName() {
 		return name;
-		
 	}
-
-	public void setStartingHP(int hp) {
-		
-		if(this.hp != hp) {
-			this.hp = hp;
-		}
-		
+	private int hp;
+	public int setStartingHP(int hp) {
+		int jay;
+		if(jay>1)
+			return void;
+		else
+			jay+=1;
+			return hp;
 	}
-
-	public int getHP() {
-		
+	public int getHP(int hp) {
 		return hp;
-		
 	}
-
 	public boolean determineIfOpponentIsFair(Dueler d, int hp) {
-		
-		return (d.getHP() == hp);
-		
+		int x = d.getHP();
+		if(x == hp)
+			return true;
 	}
-	
+	public String[] result = {};
 	public void setAction() {
-		
-		if(lastAction == NOTHING) {
-			action = LOADING;
-			loaded = true;
-		} else {
-			
-			int x = (int)(Math.random() * 10);
-			
-			if(loaded) {
-				
-				if(x < 3) {
-					action = GUARDING;
-				} else {
-					action = SHOOTING;
-					loaded = false;
-				}
-				
-			} else {
-				
-				if(x < 8) {
-					action = GUARDING;
-				} else {
-					action = LOADING;
-					loaded = true;
-				}
-				
-			}
-			
+		string x = outcome[Math.random()*outcome.length];
+		result.add(string x);
+		if(x == "shoots" && result.contains("loads")){
+			result.remove(string "loads");
+			return x;
 		}
-		
-		lastAction = action;
-		
+		else 
+			setAction();
 	}
+	public int getAction(object caller){
+		x= setAction();
+		if(caller instanceof duel) {
+			if(x =="loads")
+				return 0;
+			else if(x == "shoots")
+				return 1;
+			else if(x == "gaurds")
+				return 2;
+		}
+		else 
+			return 3;
+	}
+	public void hit(object caller) {
+		if(caller instanceof duel)
+			hp = hp-10;
+		else 
+			return 3;
+	}
+			
 	
-	public int getAction(Object caller) {
-		
-		if(caller instanceof Duel) {
-			return action;
-		} else {
-			return YEAH_RIGHT;
-		}
-		
-	}
-
-	public void hit(Object caller) {
-		
-		if(caller instanceof Duel) {
-			hp -= 10;
-		}
-		
-	}
+	
 	
 }
