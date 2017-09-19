@@ -81,7 +81,7 @@ public class CharacterB implements Dueler {
 			
 			if(loaded) {
 				
-				if(x < 3) {
+				if(x < 5) {
 					action = GUARDING;
 				} else {
 					action = SHOOTING;
@@ -90,7 +90,7 @@ public class CharacterB implements Dueler {
 				
 			} else {
 				
-				if(x < 8) {
+				if(x < 5) {
 					action = GUARDING;
 				} else {
 					action = LOADING;
