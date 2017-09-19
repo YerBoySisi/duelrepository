@@ -36,7 +36,7 @@ public class CharacterB implements Dueler {
 	}
 	public String[] result = {};
 	public void setAction() {
-<<<<<<< HEAD
+
 		
 		if(lastAction == NOTHING) {
 			action = LOADING;
@@ -65,13 +65,12 @@ public class CharacterB implements Dueler {
 				
 			}
 			
-=======
+
 		string x = outcome[Math.random()*outcome.length];
 		result.add(string x);
 		if(x == "shoots" && result.contains("loads")){
 			result.remove(string "loads");
 			return x;
->>>>>>> branch 'master' of https://github.com/YerBoySisi/duelrepository.git
 		}
 		else 
 			setAction();
