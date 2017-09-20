@@ -1,66 +1,76 @@
 package duel;
 
+
 public class CharacterB implements Dueler {
 	
-	void String[] listOfTaunts= {"You Suck",
-			"Try harder",
-			"Is that the best you can do?",
-			"Just give up",
-			"Stop wasting my time"
-	}
+	private String name;
+	private int hp;
+	private int loaded;
+	private int result;
+	
+	
+	public static final int NOTHING = -1;
+	public static final int LOADING = 0;
+	public static final int SHOOTING = 1;
+	public static final int GUARDING = 2;
+	public static final int YEAH_RIGHT = 3;
+	
+	private String[] TAUNT= {"You Suck","Try harder","Is that the best you can do?","Just give up","Stop wasting my time"};
+	
 	public void taunt() {
-		System.out.println(listOfTaunt[Math.random()*listOfTaunts.length]);
+		System.out.println(TAUNT[(int)Math.random()*TAUNT.length]);
 	}
-	private string name;
-	public string getName() {
+	
+	public void setName() {
+		
+		name = "Jace";
+		
+	}
+	public String getName() {
 		return name;
 	}
-	private int hp;
-	public int setStartingHP(int hp) {
-		int jay;
-		if(jay>1)
-			return void;
-		else
-			jay+=1;
-			return hp;
+	
+	public void setStartingHP(int hp) {
+		this.hp = hp;
 	}
-	public int getHP(int hp) {
+	public int getHP() {
 		return hp;
 	}
 	public boolean determineIfOpponentIsFair(Dueler d, int hp) {
 		int x = d.getHP();
-		if(x == hp)
-			return true;
+		return (x == hp);
 	}
-	public String[] result = {};
+	
 	public void setAction() {
-		string x = outcome[Math.random()*outcome.length];
-		result.add(string x);
-		if(x == "shoots" && result.contains("loads")){
-			result.remove(string "loads");
-			return x;
+		double x = Math.random();
+		if(loaded>1) {
+			if(x>0.49) {
+				result = SHOOTING;
+				loaded = loaded - 1;
+			}
+			else{
+				result = LOADING;
+				loaded= loaded + 1;
+			}
+		}
+			else if(x>0.15) {
+				result = GUARDING;
+			}
+			else{
+				result = LOADING;
+				loaded = loaded + 1;
+			}	
+	}
+	public int getAction(Object caller){
+		if(caller instanceof Duel) {
+			return result;
 		}
 		else 
-			setAction();
+			return YEAH_RIGHT;
 	}
-	public int getAction(object caller){
-		x= setAction();
-		if(caller instanceof duel) {
-			if(x =="loads")
-				return 0;
-			else if(x == "shoots")
-				return 1;
-			else if(x == "gaurds")
-				return 2;
-		}
-		else 
-			return 3;
-	}
-	public void hit(object caller) {
-		if(caller instanceof duel)
+	public void hit(Object caller) {
+		if(caller instanceof Duel)
 			hp = hp-10;
-		else 
-			return 3;
 	}
 			
 	
