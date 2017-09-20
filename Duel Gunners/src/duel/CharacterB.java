@@ -15,7 +15,7 @@ public class CharacterB implements Dueler {
 	private String[] TAUNT= {"You Suck","Try harder","Is that the best you can do?","Just give up","Stop wasting my time"};
 	
 	public void taunt() {
-		System.out.println(TAUNT[(int)Math.random()*TAUNT.length]);
+		System.out.println(TAUNT[(int)(Math.random()*TAUNT.length)]);
 	
 	}
 	
