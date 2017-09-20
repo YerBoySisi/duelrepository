@@ -19,6 +19,7 @@ public class CharacterB implements Dueler {
 	
 	public void taunt() {
 		System.out.println(TAUNT[(int)Math.random()*TAUNT.length]);
+	
 	}
 	
 	public void setName() {
