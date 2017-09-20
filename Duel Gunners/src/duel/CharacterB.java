@@ -9,7 +9,7 @@ public class CharacterB implements Dueler {
 	private int result;
 	
 	
-	public static final int NOTHING = -1;
+
 	public static final int LOADING = 0;
 	public static final int SHOOTING = 1;
 	public static final int GUARDING = 2;
