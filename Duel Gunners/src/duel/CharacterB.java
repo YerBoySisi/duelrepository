@@ -1,14 +1,11 @@
 package duel;
 
-
 public class CharacterB implements Dueler {
 	
 	private String name;
 	private int hp;
 	private int loaded;
 	private int result;
-	
-	
 
 	public static final int LOADING = 0;
 	public static final int SHOOTING = 1;
